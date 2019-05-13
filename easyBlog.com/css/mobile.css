@@ -1,0 +1,28 @@
+.side-bar{
+    width: 100%;
+    position: relative;/*相对定位就可以覆盖fix*/
+    float: none;
+}
+.menu-toggle{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #b0b0b0;
+    cursor: pointer;
+}
+#check:checked + .collapse{
+    display: block;
+}
+.collapse{
+    display: none;
+    text-align: center;
+}
+.main{
+    width: 100%;
+    float: none;
+    padding: 0 10px;
+}
+.main .article-list {
+    margin-right: 0;
+}

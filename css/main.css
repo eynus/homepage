@@ -1,0 +1,206 @@
+*{
+    user-select: none;
+}
+.container-sm{
+    width: 420px ;
+}
+.btn{
+    outline: 0;
+}
+.btn:focus{
+    outline: 0;
+    /* chrome有效 */
+}
+a:hover{
+    text-decoration: none;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+.mt50{
+    margin-top: 50px;
+}
+.font32{
+    font-size: 32px;
+}
+.font16{
+    font-size: 16px;
+}
+.width100{
+    width:100%;
+}
+.btn-danger:hover{
+    background-color: #ff1400;
+    border-color: #ff1400;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: url(../source/bg1\ \(2\).png) repeat center;
+}
+.top-nav{
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 16px;
+    background-color:rgba(0,0,0,0.1);
+}
+.main{
+    flex: 1;
+}
+/* 详细-navbar */
+.top-nav .navbar-brand{
+    width: 80px;
+    padding: 0 ;
+}
+.top-nav .nav{
+    display: flex;
+
+}
+.top-nav .navbar-left li{
+    flex: 1 1 auto;
+}
+.top-nav .navbar-right li{
+    flex: 0 0 auto;
+}
+/* 主体 */
+.main{
+    position: relative;
+    padding-top: 30px;
+}
+.main .sidebar{
+    padding: 0;
+}
+label.glyphicon{
+    position: absolute;
+    right: 12px;
+    top: -40px;
+    font-size: 22px;
+    cursor: pointer;
+    color: rgba(0,0,0,0.3);
+
+}
+#sidebar-checkbox:checked ~ .sidebar {
+    display: block !important;
+}
+.main .list-group .list-group-item{
+    
+    line-height: 2;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.main .list-group .list-group-item.active{
+    background-color: #ff1400;
+}
+.main .show-item{
+    display: none;
+}
+.main .show-item.show{
+    display: block;
+}
+#carousel-example-generic{
+    max-width: 658px;
+    margin:0 auto 26px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+/* 主体：第二块内容 */
+.waterfall{
+    column-width: 192px;
+    column-gap: 20px;
+    margin: 20px;
+}
+.waterfall li{
+    position: relative;
+    display: inline-block;
+    width: 192px;
+    margin: 10px 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    overflow: hidden;
+}
+.waterfall li:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 12px  rgba(0,0,0,0.2);
+}
+.waterfall .link .frontview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    text-align: center;
+    color: #fff;
+    transition: opacity 0.2s linear;
+    border-radius: 10px;
+}
+.waterfall .link:hover .frontview{
+    opacity: 1;
+    background-color: rgba(0,0,0,0.5);
+}
+/* 花名册 */
+.gender-item{
+    display: inline-block;
+    margin: 8px;
+}
+/* 搜索栏 */
+#search-result{
+    display: none;
+    height:300px;
+    line-height:2;
+    background-color:rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.6);
+    text-align: left;
+    margin: 18px 0;
+    padding: 20px ;
+     border-radius:5px;
+}
+#search-result .text-muted{
+    line-height: 300px;
+    text-align: center;
+}
+/* 充值 */
+.apartment .btn{
+    padding: 5px 8px;
+}
+/* 页脚 */
+.footer{
+    text-align: center;
+    line-height: 32px;
+    margin: 30px auto;
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+}
+/* login signup*/
+#signup .form-group,
+#login .form-group{
+    position: relative;
+}
+.error-msg{
+    display: none;
+    position: absolute;
+    top: 52%;
+    /* transform: translateY(-10%); */
+    left: 104%;
+    width: 250px;
+    font-size: 90%;
+    color: #ff1400;
+}
+#vcode-error-msg{
+    top: 30%;
+}
+.vcode-btn{
+    color: rgba(0,0,0,0.6);
+}
+.vcode-btn:hover{
+    color: rgba(0,0,0,0.8);
+}

@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="source/record.png" type="image/x-icon">
+    <title>A Cool Guy Named Eynus!</title>
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar navbar-default top-nav">
+
+            <div class="container clearfix">
+                <div class="navbar-head">
+                    <a class="navbar-brand">
+                        <img src="source/sign1.svg" alt="hi~i'm eynus">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav navbar-left ">
+                    <li class="active"><a href="index.html">首页</a></li>
+                    <li><a href="http://www.eynus.fun" target="_blank">BLOG</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="signup.html">注册</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    <label for="sidebar-checkbox" class="glyphicon glyphicon-th-large visible-xs-inline-block"></label>
+                    <input type="checkbox" id="sidebar-checkbox" class="hidden">
+                    <div class="col-md-2 sidebar hidden-xs">
+                        <div class="list-group ">
+                            <a class="list-group-item active font16" href="#">给你瞅瞅轮播~</a>
+                            <a class="list-group-item font16" href="#">我是布局小达人！</a>
+                            <a class="list-group-item font16" href="#">我想瞅瞅你的作业？</a>
+                            <a class="list-group-item font16" href="#">(●ˇ∀ˇ●)模式</a>
+                        </div>
+                    </div>
+                    <div class="col-md-10 show-item show">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                                        </li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="source/slider/1923200599.jpeg" alt="...">
+                                            <div class="carousel-caption">
+                                                我
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="source/slider/1923200603.jpeg" alt="...">
+                                            <div class="carousel-caption">
+                                                ，
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="source/slider/1923200611.jpeg" alt="...">
+                                            <div class="carousel-caption">
+                                                差得远呢
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="source/slider/1923200616.jpeg" alt="...">
+                                            <div class="carousel-caption">
+                                                加油啊！
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="source/slider/1923200625.jpeg" alt="...">
+                                            <div class="carousel-caption">
+                                                加油加油
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="source/slider/1923200631.jpeg" alt="...">
+                                            <div class="carousel-caption">
+                                                ……
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Controls -->
+                                    <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                                        data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                                        data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+                                <div class="alert alert-danger alert-dismissable fade in">
+                                    <button class="close" role="button" data-dismiss="alert">&times;</button>
+                                    <p>v2.2-新增mi2.com(包含数据交互)-jquery</p>
+                                    <p>v2.13-新增几项小练习</p>
+                                    <p>"自己真菜，加油加油"</p>
+                                    <p>1.新增typing</p>
+                                    <p>v2.12</p>
+                                    <p>1.新增博客</p>
+                                    <p>v2.11</p>
+                                    <p>1.新增"模式"模块</p>
+                                    <p>v2.1</p>
+                                    <p>1.新增搜索github用户信息功能</p>
+                                    <p>2.新增登录/注册表单验证</p>
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-4">
+                                <form action="" id="search-form">
+                                    <div class="form-group form-inline">
+                                        <div class="input-group width100">
+                                            <input id="username" type="text" class="form-control"
+                                                placeholder="可搜github用户，如:eynus" autocomplete="off">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class=" btn btn-danger">戳</button>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div id="search-result">
+                                    <p class="text-muted small">正在搜索......</p>
+                                </div>
+                                <div class="panel panel-default ">
+                                    <div class="panel-heading">站主的话</div>
+                                    <div class="panel-body text-muted">
+                                        你好，这是我（eynus)的website.<br>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 show-item">
+                        <ul class="waterfall list-unstyled font16">
+                            <li><a class="link" href="./me2.com/index.html">
+                                    <img src="source/pic/2136009784.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p>MI.COM</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="ife.com/index.html">
+                                    <img src="source/pic/2136009955.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p>IFE</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/1620060907.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/1609566063.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="mi.seckill.com/index.html">
+                                    <img src="source/pic/2136010172.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p>MI.SECKILL.COM</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="bootstrap.com/index.html">
+                                    <img src="source/pic/2136011545.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> BOOTSTRAP.COM</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/2136013033.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+
+                            <li><a class="link" href="mi.com/index.html">
+                                    <img src="source/pic/2136010703.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p>MI.INDEX.UI</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/1601218063.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="news.com/index.html">
+                                    <img src="source/pic/1594473483.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> NEWS.COM</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/1592603416.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="e-commerce.com/index.html">
+                                    <img src="source/pic/1618929557.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> E-COMMERCE</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="easyBlog.com/index.html">
+                                    <img src="source/pic/1593273411.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> EASY BLOG</p>
+                                    </div>
+                                </a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-10 show-item ">
+                        <ul class="waterfall list-unstyled">
+                            <li><a class="link" href="typing/typing.html">
+                                    <img src="source/pic/1594473483.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> TYPING</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="zepto_phoneAlbum/zepto+animateCss.html">
+                                    <img src="source/pic/1433036078.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> PHONE-ALBUM</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="slider-jquery/index.html">
+                                    <img src="source/pic/1620060907.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> SLIDER</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/1609566063.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="musicPlayer/musicPlayer.html">
+                                    <img src="source/pic/1620061385.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> MUSIC</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="game/index.html">
+                                    <img src="source/pic/1592603416.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> GAME</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="cart-jquery/index.html">
+                                    <img src="source/pic/1394133965.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> CART</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="lottery/index.html">
+                                    <img src="source/pic/1601218033.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> LOTTERY</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="drag&file/index.html">
+                                    <img src="source/pic/1601218063.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> DRAG&FILE</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/1615977264.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="drag&duck/duck.html">
+                                    <img src="source/pic/1618047055.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p> DRAG&DUCK</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/1618929557.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+                            <li><a class="link" href="#">
+                                    <img src="source/pic/945877941.jpeg" alt="">
+                                    <div class="frontview">
+                                        <p class="glyphicon glyphicon-ban-circle font32"></p>
+                                        <p> 未解锁</p>
+                                    </div>
+                                </a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-10 show-item">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <table class="table table-hover" id="roster">
+                                    <thead>
+                                        <caption>花名册</caption>
+                                        <tr>
+                                            <th>姓名</th>
+                                            <th>性别</th>
+                                            <th>选修</th>
+                                            <th>单科</th>
+                                            <th>总分</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                                <div class="panel panel-default ">
+                                    <div class="panel-heading">添加</div>
+                                    <div class="panel-body text-muted">
+                                        <form id="addForm">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-inline">
+                                                        <label for="" class="control-label">姓名</label>
+                                                        <input name="name" type="text" class="form-control"
+                                                            autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group form-inline">
+                                                        <label class="control-label">性别</label>
+                                                        <input name="gender" type="radio" value="male" checked><span
+                                                            class="gender-item">男</span>
+                                                        <input name="gender" type="radio" value="female"><span
+                                                            class="gender-item">女</span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-inline">
+                                                        <label class="control-label">分数</label>
+                                                        <input name="score" type="text" class="form-control"
+                                                            autocomplete="off">
+                                                    </div>
+
+
+                                                    <div class="form-group form-inline ">
+                                                        <label class="control-label">选修</label>
+                                                        <select name="subjects" id="subjects">
+                                                            <option value="liberal" checked>文科</option>
+                                                            <option value="science">理科</option>
+                                                            <option value="PE">体育</option>
+                                                            <option value="art">艺术</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <button id="addSubmit" type="submit"
+                                                        class="btn btn-danger pull-right">添加</button>
+
+
+                                                </div>
+
+
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default ">
+                                    <div class="panel-heading">财务用度</div>
+                                    <div class="panel-body text-muted">
+
+
+
+                                        <div class="text-danger">剩余金额：￥<span id="resource">100</span>元</div>
+
+                                        <div class="apartment a form-group form-inline">
+                                            <h5>部门A</h5>
+                                            <input class="form-control" type="text" placeholder="输入金额">
+                                            <button class="btn btn-default add">+</button>
+                                            <button class="btn btn-default sub">-</button>
+                                        </div>
+
+
+
+                                        <div class="apartment b form-group form-inline">
+                                            <h5>部门B</h5>
+                                            <input class="form-control" type="text" placeholder="输入金额">
+                                            <button class="btn btn-default add">+</button>
+                                            <button class="btn btn-default sub">-</button>
+                                        </div>
+                                        <div class="apartment c form-group form-inline">
+                                            <h5>部门C</h5>
+                                            <input class="form-control" type="text" placeholder="输入金额">
+                                            <button class="btn btn-default add">+</button>
+                                            <button class="btn btn-default sub">-</button>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="panel-footer text-muted small">
+                                        *点击+代表充值，点击-代表消耗
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                ©青春无限 中国互联网发举报中心京ICP证14001号京ICP证1401号备125439号-3京公网安备
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/roster.js"></script>
+    <script src="js/single-pattern.js"></script>
+</body>
+
+</html>

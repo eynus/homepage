@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="source/record.png" type="image/x-icon">
+    <title>A Cool Guy Named Eynus!</title>
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar navbar-default top-nav">
+
+            <div class="container clearfix">
+                <div class="navbar-head">
+                    <a class="navbar-brand">
+                        <img src="source/sign1.svg" alt="hi~i'm eynus">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav navbar-left ">
+                    <li><a href="index.html">首页</a></li>
+                    <li ><a href="http://www.eynus.fun" target="_blank">更多</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <li class="active"><a href="login.html">登录</a></li>
+                    <li><a href="signup.html">注册</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main mt50">
+
+            <div class="container container-sm">
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active"><a href="login.html">登录</a></li>
+                    <li><a href="signup.html">注册</a></li>
+                </ul>
+                <form action="" id="login">
+                    <h1>登录
+                        <small> 没有账号？<a href="signup.html">注册</a></small>
+                    </h1>
+
+
+                    <div class="form-group" >
+                        <label for="">用户名</label>
+                        <input type="text" name="username" class="form-control" placeholder="用户名/手机/邮箱" data-rule='minlength:2|maxlength:20|pattern:"^[0-9a-zA-Z]*$"' autocomplete="off">
+                        <span id="username-error-msg" class="error-msg">用户名格式有误,字母和数字组成,2-20位</span>
+                    </div>
+
+                  
+                    <div class="form-group">
+                        <label for="">密码</label>
+                        <input type="text" name="pwd" class="form-control" placeholder="密码" data-rule='minlength:6|maxlength:64'  autocomplete="off">
+                        <span id="pwd-error-msg" class="error-msg">密码格式有误,至少6位</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <a href="#">忘记密码</a>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block btn-danger">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                ©青春无限 中国互联网发举报中心京ICP证14001号京ICP证1401号备125439号-3京公网安备
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script src="js/validator.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/apply.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

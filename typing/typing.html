@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle, #444 0%, #000 50%);
+            margin: 0;
+        }
+
+        #char {
+      
+            font-size: 400px;
+            color: lightgreen;
+            text-shadow: #888 0px 0px 100px;
+        }
+
+        #result {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 100px;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        #char.wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="char">A</div>
+    <div id="result">请按下屏幕相应的字母</div>
+    <script>
+        var charDom = document.getElementById("char");
+        // str.charCodeAt(0) unicode转换成字母
+        var char, code, correctCount = errCount = 0;
+        randomChar();
+        document.addEventListener('keyup', function (e) {
+            // console.log(e.keyCode) 官方不推荐使用了
+            // console.log(e.key)//按键的字符
+            // console.log(e.code)//物理按键
+            if (event.code.slice(3, 4) == char) {
+                charDom.className='animated zoomIn ';
+                randomChar();
+                correctCount++;
+            } else {
+                charDom.className='animated wobble wrong';
+
+                errCount++;
+
+              
+            }
+            // 清空
+            setTimeout(function () {
+                    charDom.className='';
+                }, 500);
+            var per = (100*correctCount/(correctCount+errCount)).toFixed(2);
+            result.innerText = '正确个数 '+correctCount+' 错误个数 '+errCount+' 正确率为'+per +'%';
+
+        })
+        function randomChar() {
+            var random = Math.random();
+            code = Math.floor(random * 26 + 65);//unicode值65-90   [0,26)+65
+            char = String.fromCharCode(code);
+
+            charDom.innerHTML = char;
+        }
+    </script>
+</body>
+
+</html>

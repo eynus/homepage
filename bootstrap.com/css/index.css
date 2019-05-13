@@ -1,0 +1,226 @@
+
+li,body,ul,a{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+h1,h2,h3,h4{
+    font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+}
+body { 
+    padding-top: 30px; 
+}
+  nav.navbar{
+      min-height:40px;
+      /* margin:0; */
+      border-radius:0;
+  }
+  .navbar-nav  li>a{
+      position: relative;
+      padding-top: 11px;
+      padding-bottom: 11px;
+
+  }
+  .navbar-nav .reddot::after{
+      position: absolute;
+      top:10px;
+      right: 5px;
+      content: '';
+      background-color: #d9534f;
+      border:1px solid #d43f3a;
+      border-radius: 50%;
+      padding: 3px;/*注意这种方法，可以不指定宽高*/
+  }
+  .jumbotron{
+    position: relative;
+    background:linear-gradient(45deg,#020031 0,#6d3353 100%);
+    padding: 60px 0 80px;
+    text-align: center;
+    margin-bottom: 0;
+    
+  }
+  
+
+  /* 背景图片和颜色线性设置不能在一个元素同时设置，所以背景图片在伪元素设置，并定位充满整个父容器 */
+  .jumbotron::after{content: '';display: block;
+      position: absolute;
+      
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      
+      background: url(../images/bs-docs-masthead-pattern.png) repeat center center;
+      opacity: 0.4;
+  }
+  .jumbotron .container{
+    position: relative;
+    z-index: 2;
+  }
+  .masthead h1{
+      font-weight: 700;
+      color: #fff;
+      font-size: 60px;
+      line-height: 1;
+      letter-spacing: -2px;
+  }
+  .masthead h2{
+      color: #fff;
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 1.25;
+  }
+  .masthead ul li a{
+    color:rgba(255,255,255,0.5);
+  }
+  .masthead .btn-lg {
+      padding: 13px 35px 17px;
+      box-shadow: inset 0 -4px 0 #2a6496;
+      border:0;
+      transition: all 0.3s linear;
+  }
+  .masthead p{
+      /* display: block; */
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 40px;line-height: 1.25;
+  }
+  @media (min-width:768px){
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0;
+        padding-bottom: 0;
+        height:42px;
+        line-height: 42px;
+    }  
+    .navbar-collapse{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .jumbotron{
+        padding: 90px 0 110px;
+    }
+    .masthead h1{
+        font-size: 90px;
+    }
+    .masthead h2{
+        font-size: 24px;
+    }
+}
+  @media (min-width:992px){
+      .masthead h1{
+          font-size: 100px;
+      }
+      .masthead h2{
+          font-size: 30px;
+      }
+  }
+
+.gc-social{
+    background-color: #f5f5f5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.gc-social ul li {
+    display: inline-block;
+    
+}
+.gc-social ul a{
+    color:#555;
+}
+.gc-social ul a:hover{
+    color:#d9534f;
+}
+.gc-social ul i{
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 3px;
+}
+.gc-social ul li+li::before{
+    content: "|";
+    color:#ccc;
+    padding: 0 10px;
+}
+
+.projects .page-header{
+    width:60%;
+    margin:60px auto 40px auto;
+    text-align: center;
+}
+.projects .page-header h2{
+    letter-spacing: -1px;
+    font-weight: 30px;
+}
+.projects .page-header p{
+    font-weight: 200;    
+}
+.projects .thumbnail{
+    max-width:310px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:30px;
+}
+.projects .row img{
+    max-width: 100%;
+}
+.projects .row .caption{
+    height: 200px;
+    overflow: hidden;
+    color: #555;
+    text-align: center;
+}
+
+.projects .row .caption a {
+    text-decoration: none;
+    color: #337ab7;
+}
+.projects .row .caption a:hover{
+    color:#23527c;
+}
+
+.footer{
+    margin-top: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid #e5e5ee;
+    color: #777;
+}
+
+.footer-top div{
+    padding-left: 0;
+}
+.footer div h4{
+    color: #563d7c;
+    font-size: 16px;
+}
+.footer a{
+    color:#777;
+}
+.footer .cols-4 div{
+    height: 140px;
+    margin-top: 10px;
+}
+/* border的方法行不通 */
+
+
+.footer .footer-bottom ul{
+    text-align: center;
+    font-size: 13px;
+}
+.footer .footer-bottom ul li{
+    display: inline-block;
+}
+
+.footer .footer-bottom ul li+li::before{
+    content: '|';
+    color:#ccc;
+    margin:0 10px;
+}
+@media (min-width:1200px){
+    .cols-4{
+        margin-left: 8.33333333%;
+    }
+}

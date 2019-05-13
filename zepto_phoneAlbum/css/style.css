@@ -1,0 +1,40 @@
+html{
+    position: fixed;/*很重要！！*/
+}
+body,ul,li,a{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+.clearfix::before,.clearfix::after{
+    display: table;
+    content:'';
+}
+.clearfix::after{
+    clear: both;
+}
+
+.wrapper{
+    overflow: hidden;
+}
+ul{
+    width: 100%;
+    /* position: absolute;
+    left: 0;
+    top: 0; */
+    /* transition: left 0.1s linear; */
+}
+li{
+    float: left;
+    overflow: hidden;
+    background-color: #000;
+}
+#large_img{
+    display: none;
+}
+

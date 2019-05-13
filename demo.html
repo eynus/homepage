@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>我是可爱的小猪猪猪</h2>
+    <p>专门用来接收数据：postMessage</p>
+    <button class="btn">子页面给父页面传值:Bstr</button>
+
+    <script>
+        var Bstr = '你好，我是demo下面的参数';
+        var Cobj = { su: 1 }
+        var Anum = 112233;
+        //postMessage-子页面接收数据
+        window.addEventListener('message', function (messageEvent) {
+            if (e.currentTarget == parent) {//子页面对来源的验证方式：事件对象所在的窗口是不是”我“的父级窗口
+                console.log(messageEvent.data);//需要放到服务器下 地址：http://vip.chanke.xyz/V04005/chanke/demo.html
+
+            }
+        })
+        document.getElementsByClassName('btn')[0].onclick = function () {
+            //父页面窗口：parent
+            parent.postMessage(Bstr, 'http://localhost')
+        }
+    </script>
+</body>
+
+</html>

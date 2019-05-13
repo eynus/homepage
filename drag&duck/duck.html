@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鸭鸭下水</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="river">
+            <p>一起来河里玩耍呀</p>
+            <p id="notice"></p>
+        </div>
+        <div id="watcher"></div>
+        <ul class="animal">
+            <li id="duck1" draggable="true">鸭鸭01</li>
+            <li id="duck2" draggable="true">鸭鸭02</li>
+            <li id="duck3" draggable="true">鸭鸭03</li>
+            <li id="duck4" draggable="true">鸭鸭04</li>
+            <li id="duck5" draggable="true">鸭鸭05</li>
+        </ul>
+    </div>
+
+    <script>
+        var ul = document.getElementsByTagName('ul')[0];
+            list = ul.getElementsByTagName("li"),
+            notice = document.getElementById("notice"),
+            watcher = document.getElementById("watcher"),
+            len = list.length;
+        init();
+
+        function init(){
+            bindEvent();
+        }
+        function bindEvent() {
+            for (var i = 0; i < len; i++) {
+                list[i].addEventListener('dragstart',function(e){//立即执行函数可以解决i!=6问题，但解决不了随时改变index问题
+                    var index = find_index(this,list),
+                        dt = e.dataTransfer;
+                    dt.setData('id',index);
+                });
+                list[i].addEventListener('dragover',function(e){
+                    e.preventDefault();
+                });
+                list[i].addEventListener('drop',function(e){
+                    var dt = e.dataTransfer,
+                        index = dt.getData('id');
+                        self = find_index(this,list);
+                        alert(index,self);
+                        ul.insertBefore(list[index],this);
+                
+                });
+            }
+        }
+        // 实时查找所处位置
+        function find_index(dom,list){
+            for(var j=0;j<len;j++){
+                if(dom == list[j]){
+                    return j;
+                }
+            }
+        }
+        function alert(init,passive){
+            if(init>passive){
+                watcher.innerText = list[init].innerText+'插'+ list[passive].innerText +'的队！';
+            }else if(init == passive-1 || init == passive){
+                watcher.innerText = list[init].innerText+'有点傻';
+            }else{
+                watcher.innerText = list[init].innerText+'想不开，让别的鸭鸭插队！';
+            }
+        }
+
+        river.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        })
+        river.addEventListener('drop', function (e) {
+            var dt = e.dataTransfer,
+            index = dt.getData('id');
+            notice.innerText += list[index].innerText +'下水啦。';
+            list[index].remove();
+    
+        })
+// 还需要实现 目标元素之间相互拖拽 改变位置
+    </script>
+</body>
+
+</html>

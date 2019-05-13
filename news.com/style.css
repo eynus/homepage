@@ -1,0 +1,150 @@
+*{
+    font-size: 14px;
+}
+.wrapper{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    
+}
+.center{
+    flex: 1;
+}
+.container-sm{
+    max-width: 500px;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+img{
+    display: block;
+    max-width: 100%;
+    
+}
+img,.sidebar .list-group-item,
+.search-bar-card{
+    border-radius: 3px;
+}
+a:hover{
+    text-decoration: none;
+}
+.navbar-brand{
+    background-image: url('02.png');
+    width:50px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#toggle-label{
+    display: none;
+    position:  absolute;
+    right: 16px;
+    top: 16px;
+    color: #666;
+}
+#toggle-label:hover{
+    color: #333;
+}
+#toggle-checkbox:checked +  div{
+    display: block !important;
+}
+.sidebar .list-group-item{
+    border: 0;
+}
+.sidebar .list-group-item.active{
+    background-color: rgba(0,0,0,0.8);
+}
+.news-item {
+    margin-bottom: 10px;
+}
+.news-item .title{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #000;
+}
+.info{
+    color: #888;
+}
+.avatar{
+    display: inline-block;
+}
+.avatar img{
+    display: inline-block;
+    width: 16px;
+    margin-right: 2px;
+}
+.search-bar-card ,.side-bar-card{
+    margin-top: 15px;
+    background-color:  rgba(0,0,0,0.05);
+    padding: 10px 0;
+}
+.search-bar-card.special{
+    padding: 20px 0;
+}
+.search-bar-card .text-lg{
+    font-size: 150%;
+}
+ .card-title,
+ .card-body .list .item{
+    padding:10px 15px;
+}
+.search-bar-card .card-title,
+.side-bar-card .card-title{
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+ .card-body .list .item:hover{
+    background-color: rgba(0,0,0,0.05);
+}
+.card-body .list .item .title{
+    padding-bottom: 5px;
+}
+.card-body .list .item .desc{
+    color: #999;
+}
+
+
+.news-title{
+    line-height: 1.3;
+}
+.news-status{
+    color: #999;
+    opacity: 0.8;
+}
+.news-content{
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.news-content img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.no-padding-h{
+    padding-left: 0;
+    padding-right: 0;
+}
+.footer{
+    color: #999;
+    margin-top: 30px;
+    padding:30px;
+    font-size: 12px;
+    text-align: center;
+}
+/* 登录页 */
+.btn-primary{
+    background-color: #ea0c3c;
+    border-color:#da0f3b;
+}
+.btn-primary:hover{
+    border-color:#da0f3b;
+    background-color: #df0937;
+}

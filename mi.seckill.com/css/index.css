@@ -1,0 +1,706 @@
+body,ul,li,input[type="search" i]{
+    /*body默认有margin和padding值，所以需要设置 0;*/
+    margin:0;
+    padding: 0; 
+}
+ul{
+    list-style-type: none;
+}
+body{
+     /*字体是从官方直接拷贝的*/
+    /*font不能放在通配选择器中，相当于每个选择器都添加这个属性*/
+    font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif; 
+}
+/* <a>标签初始化，去除下划线：提取出来，不需要一个个的写。 */
+a{
+    text-decoration: none;
+}
+
+.topbar{
+    height:40px;
+    background-color: #333;
+}
+.container{
+    width:1226px;
+    margin:0 auto; /* margin:0 auto设置居中*/
+    
+}
+.container::before,
+.container::after,
+.clearfix::before,/*clearfix类 很好用*/
+.clearfix::after{
+    content: '';
+    display: table;/*盖帽，解决margin重叠,如果是设置给topbar（祖父）好像不太管用，理解为给父元素设置*/
+}
+.container:after,
+.clearfix::after{
+    clear: both;/*清除浮动 是在container清除*/
+}
+.topbar a{
+    color:#b0b0b0;
+    font-size: 12px;
+    /*a继承父元素div的font-size被(浏览器默认样式)覆盖，所以需要重新设置*/
+}
+.topbar a:hover{
+    color:#fff;
+}
+
+
+
+.topbar-nav{
+    float:left; 
+    height:40px;/*实现文字居中-设置容器高度*/
+    line-height:40px;/*实现文字居中-设置行高*/
+    font-size:0;
+    /* 解决代码中的换行显示为“|”后面一个空格的问题，不过|也会消失，需要在span重新设置大小 */
+    
+}
+/* 解决分隔符间隔的问题：行内元素span的margin只有左右 */
+.topbar-nav span{
+    margin:0.5em;
+    font-size: 12px;
+    color:#424242;
+    font-family: sans-serif;/*"|"长度变化*/
+}
+.topbar-car,
+.topbar-info{
+    float:right;
+}
+.topbar-car a{
+    /* 与nav的a(点击文字有效)不同，这里点击整个区域都是可链接的 */
+    display: block;
+    background: #424242;
+    height:40px;
+    width: 120px;
+    line-height:40px;
+    text-align: center;
+}
+.topbar-car a:hover{
+    background: #fff;
+    color:#ff6700;
+}
+.topbar-car i{
+    font-size: 20px;/*i元素居中：设置大小和行高*/
+    line-height: 20px;
+    margin-right:4px;         /*左右margin*/
+    vertical-align: -4px;/*调整购物车向下移动4像素*/
+}
+.topbar-car span{
+    margin-left:-4px;
+    font-size:12px;
+    /* font-family: sans-serif; */
+}
+.topbar-info{
+    margin-right: 15px;
+    height:40px;
+    line-height: 40px;
+    font-size: 0;
+}
+
+.topbar-info a{
+    float: left;
+    /*为什么要浮动呢？？-未知 实践得知：不设浮动会往下便宜一点点*/
+    padding:0 5px;
+    /* font-size: 12px; 上面总的设置过了，这里没有必要重复*/
+    /*font-family: sans-serif; 设置了这个字体，上下位置反而偏移了*/
+    height:40px;
+    line-height: 40px;
+}
+.topbar-info a:nth-last-of-type(1){
+    padding: 0 10px;/*最后一个a元素特殊处理padding*/
+}
+.topbar-info span{
+    /* border:1px solid red; */
+    float:left;
+    /* margin:5px; 因为和之前不一样，这个是块元素 所以设置块元素的padding值就可以了*/
+    color:#424242;
+    font-size: 12px;
+    font-family: sans-serif; line-height: 40px;
+    height: 40px;
+}
+
+.header{
+    height:100px;
+    /* border:1px solid red; */
+}
+/* 先整体布局好 *//* 再开始写具体样式内容 */
+.header-logo{
+    position: relative;
+    float: left;
+    width:62px;
+    margin-top:22px;
+    /* height:55px; */
+}
+/*
+background-position:50% 50%;
+图片水平和垂直居中。与 background-position:center center;效果等同。
+等同于x：{容器(container)的宽度—背景图片的宽度}*x百分比，超出的部分隐藏。
+等同于y：{容器(container)的高度—背景图片的高度}*y百分比，超出的部分隐藏。
+*/
+.header-logo a{
+    display: block;
+    width:55px;/*需要设置宽高*/
+    height:55px;
+    background-color:#ff6700 ;
+    overflow: hidden;
+}
+.header-logo  a::before,
+.header-logo  a::after{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1;
+    width:55px;
+    height:55px;
+    content:'';
+    transform-origin:50% 50%;
+    transition:all .2s
+}
+.header-logo a::before{
+    background:  url(../images/mi-logo.png) no-repeat 50% 50% ;
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+/* hover时tramform变化，opacity变化 */
+.header-logo a:hover::before{
+    opacity: 0;
+    transform: translate3d(55px,0,0);
+}
+.header-logo a:hover::after{
+    opacity: 1;
+    transform: translate3d(55px,0,0);
+}
+.header-logo a::after{
+    background:  url(../images/mi-home.png) no-repeat 50% 50% ;
+    opacity: 0;
+    margin-left: -55px;
+    transform: translate3d(0,0,0);
+}
+/*网络好能加载图片：不显示文字；否则显示文字内容  --骚操作！！*/
+.header-logo a.lr {
+    text-align: left;
+    text-indent:-999em;
+}
+.header-nav{
+    float: left;
+    width:820px;
+    height:100px;
+}
+/* .header-nav ul li{这种样式写在头部 应用更广泛
+    list-style: none;
+} */
+.header-nav .nav-list{
+    width:820px;
+    height:88px;
+    font-size: 16px;
+    padding: 12px 0 0 30px;
+}
+
+.header-nav .nav-list .nav-item{
+    float:left;
+}
+
+.header-nav  .nav-list .nav-item:nth-of-type(1){
+    position: relative;
+    float: left;
+    width:127px;
+    padding:0 15px 0 0 ;
+}
+.header-nav  .nav-list .nav-item > a{
+    display: block;
+    padding:26px 10px 38px;
+    color:#333;
+    /* text-decoration: none; */ 
+}
+.header-nav  .nav-list .nav-item a:hover{
+    color:#ff6700;
+}
+
+.header-nav .nav-list  .nav-second {
+    display:none;
+    position: absolute;
+    z-index: 21;
+    top:88px;
+    left:-92px;
+    padding: 20px 0;
+    margin:0;
+    height: 418px;
+    width: 234px;
+    border:1px solid #ff6700;
+    color:#424242;
+    background-color: #fff;
+    /* transition: all 0.5s linear; */
+
+}
+.header-nav .nav-list .nav-active  .nav-second{
+    display: block;
+}
+.header-nav .nav-list  .nav-second .category-item a{
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 16px;
+    color:#333;
+}
+ .header-nav .nav-list .category-item a i{
+     font-size: 16px;
+     line-height: 1;
+     position: absolute;
+     top:12px;
+     right: 20px;
+     color:rgba(0,0,0,0.2);
+ }
+ 
+
+.header-nav  .nav-list .nav-item:nth-of-type(1) > a{
+    display: block;
+    padding:26px 0 38px;/*特殊设置*/
+    color:#333;
+    text-align: right;
+}
+.header-nav .nav-item:nth-of-type(1) .category-item .children-4{
+    display: none;
+    position: absolute;
+    z-index: 24;
+    background-color: #fff;
+    top:-1px;
+    left: 235px;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    width:992px;
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.1);
+}
+.header-nav .nav-item:nth-of-type(1) .nav-second .link:hover{
+    background-color: #ff6700;
+    color:#fff;
+}
+
+.header-nav  .nav-list  .nav-active .nav-second .category-active > .children-4{
+    display: block;
+}
+.header-nav  .nav-list  .category-item .children-4 ul{
+    float: left;
+    padding: 2px 0;
+    width: 248px;
+    height: 458px;
+}
+.header-nav  .nav-list  .category-item .children-4 ul li  {
+    /* float: left; */
+    width: 265px;
+    height: 76px;
+}
+.header-nav  .nav-list  .category-item .children-4 ul li a {
+    display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    /* border:1px solid red; */
+}
+.header-nav  .nav-list  .category-item .children-4 ul li a .text{
+    /* text-align: center; */
+    vertical-align: top;
+    line-height: 40px;
+}
+.header-nav  .nav-list  .category-item .children-4 ul li a img{
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+.header-nav  .nav-list  .category-item .children-4 ul li a:hover .text{
+    color:#ff6700;
+}
+.header-search{
+    float:right;
+    margin-top:25px;
+    position: relative;
+}
+.header-search .search-form{
+    display: block;/*不写也生效*/
+    width:296px;
+    height:50px
+}
+.header-search .search-btn{
+    display: block;/*不写也生效*/
+    position: absolute;
+    right:0;
+    top:0;
+    width:52px;
+    height:50px;
+    font-size: 24px;
+    line-height:24px;
+    background-color: #fff;
+    color:#616161;
+    border:1px solid #e0e0e0;
+
+    outline: 0;
+    /*设置点击时没有外边蓝线*/
+}
+.header-search .search-btn:hover{
+    color:#fff;
+    background-color: #ff6700;
+}
+.header-search .search-txt{
+    position: absolute;
+    z-index: 1;
+    right:51px;/*右边框与btn重叠一下，使border看上去没那么粗*/
+    top:0;
+    width:245px;
+    height:50px;
+    border:1px solid #e0e0e0;
+    padding: 0 10px;
+    outline: 0;
+}
+.header-search .search-txt:focus ~ .search-hot-words{
+    display: none;
+}
+.header-search .search-form .search-hot-words{
+    /* border:1px solid red; */
+    /* display: block; */
+    position: absolute;
+    z-index: 2;
+    right:62px;
+    top:14px;
+    text-align: right;
+    /* font-size: 0px; */
+    /*很重要！这个问题排查了很久因为html中换行了！但是设置之后宽度比原版小几个像素！*/
+}
+.header-search .search-form .search-hot-words a{
+    display: inline-block;
+    margin-left:5px;
+    font-size:12px;
+    padding:0 5px;
+    text-align: right;
+    color:#757575;
+    background-color: #eee;
+
+}
+.header-search .search-form .search-hot-words a:hover{
+    background-color: #ff6700;
+    color:#fff;
+}
+
+
+.seckill{
+    background-color: #f5f5f5;
+}
+.seckill .seckill-head{
+    margin-top:18px;
+    background: url(../images/seckill-head.jpg) no-repeat 50% 0% ;
+    height:170px;
+}
+.seckill .container .seckill-nav{
+    margin:-68px 0 22px;
+}
+/*固定导航栏*/
+.seckill .container .seckill-nav-fixed{
+    position: fixed;
+    top:60px;
+}
+.seckill .container .seckill-nav ul{
+    width:1226px;/*不设置的话，fixed之后width有问题*/
+    height:68px;
+    background-color: #414141;
+}
+.seckill .container .seckill-nav ul li{
+    display:block;
+    float:left;
+    height:68px;
+    color: #fff;
+    width:20%;
+    line-height: 68px;
+    /*垂直居中*/
+    text-align: center;
+    cursor: pointer;/*小手属性*/
+}
+.seckill .container .seckill-nav .active{
+    background-color: #f1391a;
+}
+.seckill .seckill-nav li em{
+    display: inline-block;
+    margin-left:30px;
+    font-style: normal;/*取消斜体*/
+    font-size: 18px;
+    line-height: 1;
+    /*和字体大小一样*/
+    text-align: left;/*？？？？？作用还不知道*/
+    /* vertical-align: middle; */
+    
+}
+.seckill .seckill-nav li span{
+    display: inline-block;
+    margin-left:15px;
+    font-size: 14px;
+    line-height:1;
+    text-align: left;
+    vertical-align: middle;
+}
+.seckill .seckill-nav li span em{
+    font-style: normal;
+    display: inline-block;
+    margin-left: 0;
+    font-size:14px;
+    /* line-height: 1; */line-height: 20px;/*因为有两行，所以需要20px;*/
+    text-align: left;
+
+}
+
+.seckill .seckill-goods ul{
+    display: none;/*点击后才显示*/
+    margin-right:-13px;/*因为margin-right有三个13px,>容器大小，只能放下两个，所以需要扩大容器*/
+}
+.seckill .seckill-goods ul.active{
+    display: block;
+}
+.seckill .seckill-goods ul li{
+    float:left;
+    /* width:400px; */
+    height:190px;
+    margin-right: 13px;
+    margin-bottom: 13px;
+    background-color: #fff;
+    
+}
+.seckill .seckill-goods .goods-pic{
+    float:left;
+    width:190px;
+    height:190px;
+    /* border:1px solid red; */
+}
+.seckill .seckill-goods .goods-pic img{
+    width:190px;
+    height:190px;
+}
+.seckill .seckill-goods .goods-info{
+    /* float:left; */
+    margin-left:210px;
+    width:190px;
+    height:190px;
+    /* border:1px solid blue; */
+    padding-top: 30px;
+}
+.seckill .seckill-goods .goods-info a.name{
+    display: block;
+    color:#333;
+    height:16px;
+    line-height:1;/*文字向上偏移了一点*/
+    /*超出一行文字的时候显示...*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+.seckill .seckill-goods .goods-info .txt{
+    margin-top:10px;
+    font-size: 12px;
+    line-height:1;
+    color:#757575;
+    
+}
+.seckill .seckill-goods .goods-info .price{
+    margin-top:14px;
+    margin-bottom: 0;
+    color:red;
+    font-size:16px;
+    line-height: 1;
+}
+.seckill .seckill-goods .goods-info del{
+    color:#757575;
+    font-size: 12px;
+    line-height:1;/*设了跟没设一样*/
+    margin-left:10px;
+    
+}
+.seckill .seckill-goods .goods-info .btn{
+    display: block;
+    background-color: #f1391a;
+    border:1px solid #f1391a;
+    color:#fff;
+    width:118px;
+    height:28px;
+    text-align: center;
+    font-size:14px;
+    line-height:28px;
+    margin-top:19px;
+}
+.seckill .seckill-goods .goods-info .tips{
+    font-size:12px;
+    line-height: 1;
+    color:#757575;
+    margin-top:10px;
+
+
+}
+.seckill .seckill-notice{
+    font-size:12px;
+    color:#b0b0b0;
+    margin-top:100px;
+    padding-bottom: 35px;
+}
+
+.site-footer{
+    background-color:#fff;
+
+}
+.site-footer .container .footer-service{
+    border-bottom: 1px solid #e0e0e0;
+    padding :27px 0;
+}
+.site-footer .container .footer-service li{
+    float:left;    
+    width:19.8%;
+    height:25px;
+    line-height:25px;
+    font-size:16px;
+    border-left:1px solid #e0e0e0;
+    
+    text-align: center;
+}
+.site-footer .container .footer-service li:nth-of-type(1){
+    border:none;
+}
+.site-footer .container .footer-service li a{
+    
+    color:#616161;
+}
+.site-footer .container .footer-service li a:hover{  
+    color:#ff6700;
+}
+.site-footer .container .footer-service li a i{
+    font-size:24px;
+    line-height: 24px;;
+    margin-right:6px;
+    vertical-align: -4px;
+}
+.site-footer .container .footer-links{
+    padding:40px 0;
+}
+.site-footer .container .footer-links .link-item{
+    float:left;   
+    width:160px;  
+    height:112px;
+    margin:0;
+}
+.site-footer .container .footer-links .link-item dt{
+    margin-bottom: 26px;
+    font-size:14px;
+    line-height: 1.25;
+}
+.site-footer .container .footer-links .link-item dd{
+    margin:10px 0 0;font-size: 12px;
+}
+.site-footer .container .footer-links .link-item dd a{
+    color:#757575;
+    
+}
+.site-footer .container .footer-links .link-item dd a:hover{
+    color:#ff6700;
+}
+.site-footer .container .footer-contact{
+    float:right;
+    border-left:1px solid #e0e0e0;
+    width:251px;
+    height:112px;
+    color:#616161;
+    text-align: center;
+}
+.site-footer .container .footer-contact p.tel{
+    margin: 0 0 5px;
+    font-size: 22px;
+    line-height: 1;
+    color:#ff6700;
+}
+.site-footer .container .footer-contact p.time{
+    margin:0 0 16px;
+    font-size:12px;
+}
+.site-footer .container .footer-contact a.btn{
+    display: inline-block;
+    height:28px;
+    width: 118px;
+    color:#ff6700;
+    font-size:12px;
+    line-height: 28px;
+    border:1px solid #ff6700;
+     
+   
+}
+.site-footer .container .footer-contact  a:hover{
+    color:#fff;
+    background-color: #ff6700;
+}
+.site-footer .container .footer-contact  a i{
+    margin-right: 4px;
+    /* vertical-align: -2px; */
+}
+.site-info{
+    background-color: #fafafa;
+    padding:30px 0;
+    font-size: 12px;
+}
+.site-info .logo{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+    width: 57px;/*需要设置宽高*/
+    height:57px;
+    background:#ff6700  url(../images/logo-footer.png) no-repeat 50% 50% ;
+}
+.site-info .tab{
+    display: inline-block;
+    /* padding-left: 57px; */
+}
+.site-info .tab ul{
+    padding-bottom: 4px;
+}
+.site-info .tab ul li{
+    float:left;
+    color: #757575;
+    padding-right:2px;
+    padding-left:2px;
+    line-height:1;
+    border-right:1px solid #757575;
+}
+.site-info .tab ul li:nth-last-of-type(1){
+    border-right:none;
+}
+.site-info .tab ul li a{
+    color:#757575;
+
+}
+.site-info .tab ul li a:hover{
+    color:#ff6700;
+}
+.site-info .tab p.corp{
+    color:#b0b0b0;
+    line-height: 18px;  
+    margin:0px;
+}
+.site-info .tab p.corp a{
+    color:#b0b0b0;
+}
+.site-info .tab p.corp a:hover{
+    color:#ff6700;
+}
+
+.site-info .pic{
+    /* width: 1226px; */
+    height: 28px;
+    margin-top:4px;
+    padding-left:67px;
+}
+.site-info .pic img{
+    width:auto;
+    height:28px;
+    margin-bottom:15px;
+    margin-left:0;
+}
+.site-info .slogan{
+    margin: 30px auto 0;
+    text-align: center;
+    width:267px;
+    height: 19px;
+    text-align: left;
+    text-indent: -999em;
+    background:url(../images/slogan2016.png) no-repeat;
+}
