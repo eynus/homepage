@@ -38,7 +38,7 @@ img{
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
+    min-height: 101vh;
     background: url(../source/bg1\ \(2\).png) repeat center;
 }
 .top-nav{
